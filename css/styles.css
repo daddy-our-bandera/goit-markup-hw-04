@@ -218,15 +218,9 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
-/* Peculiarities */
-.features-svg-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+
+.features-svg-block {
   margin-bottom: 30px;
-}
-.features-svg-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,12 +319,15 @@ img {
 .socials-icon {
   fill: #afb1b8;
 }
-.socials-link:hover {
+.socials-link:hover,
+.socials-link:focus {
   background: var(--accent-txt-cl);
 }
-.socials-link:hover .socials-icon {
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
   fill: var(--light-txt-bg-cl);
 }
+
 /* clients */
 
 .clients-list {
@@ -347,14 +344,18 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
-.clients-link:hover {
-  border-color: var(--btn-focus-bg-cl);
-}
-.clients-link:hover .clients-icon {
-  fill: var(--accent-txt-cl);
-}
 .clients-icon {
   fill: #afb1b8;
+}
+.clients-link:hover,
+.clients-link:focus {
+  fill: var(--btn-focus-bg-cl);
+  border-color: var(--btn-focus-bg-cl);
+}
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: inherit;
+  border-color: inherit;
 }
 /* footer */
 .footer {
@@ -408,7 +409,6 @@ img {
 }
 .footer-slogan {
   display: block;
-  margin-top: 12px;
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -440,7 +440,8 @@ img {
 .footer-svg-icon {
   fill: var(--light-txt-bg-cl);
 }
-.footer-svg-link:hover {
+.footer-svg-link:hover,
+.footer-svg-link:focus {
   background: var(--accent-txt-cl);
 }
 
@@ -449,6 +450,7 @@ img {
 /* portfolio buttons */
 .main-nav-btn:hover,
 .main-nav-btn:focus {
+  color: var(--light-txt-bg-cl);
   background-color: var(--accent-txt-cl);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -473,6 +475,7 @@ img {
   background-color: var(--white-bg-collors);
 }
 .btn-current {
+  color: var(--light-txt-bg-cl);
   background-color: var(--btn-focus-bg-cl);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -496,9 +499,11 @@ img {
 .portfolio-item {
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
-
-.portfolio-item:hover,
-.portfolio-item:hover {
+.portfolio-link {
+  display: block;
+}
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
